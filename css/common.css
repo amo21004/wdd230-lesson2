@@ -8,6 +8,10 @@ header {
     border-bottom: 6px solid #64732F;
     color: #CAD959;
 }
+header .author {
+    font-size: 1.25rem;
+    font-weight: 100;
+}
 
 main {
     margin: 48px 24px;
@@ -16,11 +20,34 @@ main {
 .principles-grid {
     display: grid;
     margin: 0 auto;
-    max-width: 1200px;
-    justify-content: center;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 96px;
+    max-width: 1500px;
+}
+@media (min-width: 1000px) {
+    .principles-grid {
+        justify-content: center;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 999px) {
+    .principles-grid .principle:not(:last-child) {
+        margin: 0 0 24px 0;
+    }
+}
+@media (min-width: 1500px) {
+    .principles-grid {
+        grid-column-gap: 96px;
+    }
+}
+@media (min-width: 1250px) {
+    .principles-grid {
+        grid-column-gap: 48px;
+    }
+}
+@media (min-width: 1000px) {
+    .principles-grid {
+        grid-column-gap: 24px;
+    }
 }
 .principles-grid h2 {
     margin: 0; padding: 8px 0;
@@ -54,12 +81,22 @@ main {
 }
 .principles-grid h3 {
     margin: 0 0 16px 0;
+    font-weight: 900;
 }
 .principles-grid .link {
+    margin: 0 0 16px 0;
+}
+.principles-grid .link a {
+    color: inherit;
+}
+.principles-grid .description {
     margin: 0 0 32px 0;
 }
-.principles-grid a {
-    color: inherit;
+.principles-grid .image {
+    text-align: center;
+}
+.principles-grid .image img {
+    max-width: 100%;
 }
 
 footer {
